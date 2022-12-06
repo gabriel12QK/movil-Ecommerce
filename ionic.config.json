@@ -1,0 +1,7 @@
+{
+  "name": "movil-Ecommerce",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
