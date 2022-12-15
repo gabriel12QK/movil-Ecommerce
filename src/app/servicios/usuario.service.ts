@@ -8,7 +8,7 @@ import { NavParams } from '@ionic/angular';
   providedIn: 'root'
 })
 export class UsuarioService {
-
+  
   constructor(private http:HttpClient) { }
 
 
@@ -17,6 +17,7 @@ export class UsuarioService {
   }
 
   StoreUsuario(form:any){
+
     const params = new FormData();
     params.set('name',form.name);
     params.set('last_name',form.last_name);
@@ -27,9 +28,8 @@ export class UsuarioService {
     params.set('direccion',form.direccion);
     params.set('imagen',form.imagen);
     params.set('telefono',form.telefono);
-    params.set('id_tipo_usuario',form.id_tipo_usuario);
 
-    return this.http.post<any>(`${environment.urlApi}register`,params)
+    return this.http.post<any>(`${environment.urlApi}registro`,params)
   }
 
 }

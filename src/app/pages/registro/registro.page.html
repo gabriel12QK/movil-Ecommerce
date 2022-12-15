@@ -1,0 +1,155 @@
+<ion-header class="ion-text-center ion-no-border">
+  <ion-toolbar>
+      <ion-buttons routerLink="/login" slot="start">
+          <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class=" ion-no-padding">
+  <ion-grid class="ion-no-padding ion-no-margin">
+      <ion-row>
+          <ion-col size="12" style="text-align:center;margin-top:15px;font-weight:bold">
+              <ion-label style="font-size:40px; font-style: RALEWAY;">Registrate</ion-label>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col size="12" style="text-align:center;margin-top:3px;padding: 5px;font-family:Poppins;">
+              <ion-label style="font-size:16px">¡Estas a pocos pasos de que tu pedido llegue a casa!</ion-label>
+          </ion-col>
+      </ion-row>
+      <ion-row class="ion-no-padding ion-no-margin">
+          <ion-col size="12" text-center class="ion-text-center">
+              <form style="margin-top: 1px;padding: 20px;" class="ion-no-padding ion-no-margin" [formGroup]="registerForm" (ngSubmit)="SubmitForm()" class="p-3">
+                  <ion-list>
+                    <ion-row class="mt-3">
+                      <ion-col size="12">
+                        <ion-item lines="none" class="ion-no-padding ion-no-margin  mt-1 no-border">
+                          <div style="margin: auto;" >
+                              
+                              <ion-img (click)="imageInput.click()" class="ion-margin efectClick" style="border-radius: 100%; max-width:7rem; max-height: 7rem; overflow: hidden;align-items: center;" [src]="fileSelect|| '../../../assets/no-image.png'">
+                                <input class="d-none" #imageInput (change)="getFile($event)" type="file" style="text-align: center;">
+                            </ion-img>
+                          </div>
+                      </ion-item>
+                      <div style="font-size:12px; text-align:left;" *ngIf="getForm['imagen'].errors && state===false" class="mx-auto d-flex flex-column  align-items-center">
+                          <div class="text-danger" *ngIf="getForm['imagen'].hasError('required')">
+                              Este campo es obligatorio
+                          </div>
+                      </div>
+                      </ion-col>
+                      <ion-col size="6">
+                        <ion-item lines="none" class="ion-no-padding ion-no-margin">
+                        <ion-input clearInput  formControlName="name" type="text" placeholder="Nombre">
+                        </ion-input>
+                    </ion-item>
+                    <div style="font-size:10px; text-align:left; padding-left: 8px; " *ngIf="getForm['name'].errors && state==false">
+                        <div class="text-danger" *ngIf="getForm['name'].hasError('required')">
+                            Este campo es obligatorio
+                        </div>
+                    </div>
+                </ion-col>
+                      <ion-col size="6">
+                        <ion-item lines="none" class="ion-no-padding ion-no-margin">
+                          <ion-input clearInput  formControlName="last_name" type="text" placeholder="Apellido">
+                          </ion-input>
+                      </ion-item>
+                      <div style="font-size:10px; text-align:left; padding-left: 8px; " *ngIf="getForm['last_name'].errors && state==false">
+                          <div class="text-danger" *ngIf="getForm['last_name'].hasError('required')">
+                              Este campo es obligatorio
+                          </div>
+                      </div>
+                      </ion-col>
+                      <ion-col size="12">
+                        <ion-item lines="none" class="ion-no-padding ion-no-margin">
+                          <ion-input clearInput  formControlName="telefono" type="number" placeholder="0999999999">
+                          </ion-input>
+                        </ion-item>
+                      <div style="font-size:10px; text-align:left; padding-left: 8px; " *ngIf="getForm['telefono'].errors && state==false">
+                          <div class="text-danger" *ngIf="getForm['telefono'].hasError('required')">
+                              Este campo es obligatorio
+                          </div>
+                      </div>
+                      </ion-col>
+                      <ion-col size="12">
+                        <ion-item lines="none" class="ion-no-padding ion-no-margin">
+                          <ion-input clearInput  formControlName="cedula" type="numeric" placeholder="111111111111-1">
+                          </ion-input>
+                        </ion-item>
+                      <div style="font-size:10px; text-align:left; padding-left: 8px; " *ngIf="getForm['cedula'].errors && state==false">
+                          <div class="text-danger" *ngIf="getForm['cedula'].hasError('required')">
+                              Este campo es obligatorio
+                          </div>
+                      </div>
+                      </ion-col>
+                      <ion-col size="12">
+                        <ion-item lines="none" class="ion-no-padding ion-no-margin">
+                          <ion-input clearInput  formControlName="direccion" type="text" placeholder="AV. 3 de Octubre">
+                          </ion-input>
+                        </ion-item>
+                      <div style="font-size:10px; text-align:left; padding-left: 8px; " *ngIf="getForm['direccion'].errors && state==false">
+                          <div class="text-danger" *ngIf="getForm['direccion'].hasError('required')">
+                              Este campo es obligatorio
+                          </div>
+                      </div>
+                      </ion-col>
+                      <ion-col size="12">
+                        <ion-item lines="none" class="ion-no-padding ion-no-margin">
+                          <ion-input clearInput  formControlName="referencia" type="text" placeholder="AV. 3 de Octubre">
+                          </ion-input>
+                        </ion-item>
+                      <div style="font-size:10px; text-align:left; padding-left: 8px; " *ngIf="getForm['referencia'].errors && state==false">
+                          <div class="text-danger" *ngIf="getForm['referencia'].hasError('required')">
+                              Este campo es obligatorio
+                          </div>
+                      </div>
+                      </ion-col>
+                      <ion-col size="12">
+                        <ion-item lines="none" class="ion-no-padding ion-no-margin">
+                          <ion-input clearInput class="ion-no-padding ion-no-margin" formControlName="email" type="email" placeholder="Correo electrónico">
+                          </ion-input>
+                      </ion-item>
+                      <div style="font-size:12px; text-align:left; padding-left:8px" *ngIf="getForm['email'].errors && state==false">
+                          <div class="text-danger" *ngIf="getForm['email'].hasError('required')">
+                              Este campo es obligatorio
+                          </div>
+                      </div>
+
+                      </ion-col>
+                      <ion-col size="12">
+                        <ion-item lines="none" class="ion-no-padding ion-no-margin">
+                          <ion-input clearInput class="ion-no-padding ion-no-margin" formControlName="password" type="password" placeholder="Contraseña">
+                          </ion-input>
+                      </ion-item>
+                      <div style="font-size:12px; text-align:left; padding-left:8px" *ngIf="getForm['password'].errors && state==false">
+                          <div class="text-danger" *ngIf="getForm['password'].hasError('required')">
+                              Este campo es obligatorio
+                          </div>
+                          <div class="text-danger" *ngIf="getForm['password'].hasError('minlength')">
+                              Mínimo 8 caracteres
+                          </div>
+                      </div>
+                      </ion-col>
+                    </ion-row>
+
+                      <br>
+                      <!-- <div class="mt-3" style="font-family: 'Noto Sans', noto;">
+                        <ion-checkbox style="font-size:12px;font-family: 'Noto Sans', noto;">
+                        </ion-checkbox>
+                        <ion-label style="font-size:12px;font-family: 'Noto Sans', noto;display: inline-block;">Acepto los terminos y condiciones</ion-label>
+                    </div> -->
+                      <ion-button  type="submit" expand="block">
+                          <span style="color:white; font-weight: bold;letter-spacing: 1pt;font-size: 20px;">
+                              Registrarme
+                          </span>
+                      </ion-button>
+                      <div class="mt-3" style="font-family: 'Noto Sans', noto;">
+                          <ion-label style="font-size:12px;font-family: 'Noto Sans', noto;">Ya estás resgistrado?
+                              <a style="color: #ffffff;" routerLink="/login">Inicia sesión</a>
+                          </ion-label>
+                      </div>
+                  </ion-list>
+              </form>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>
