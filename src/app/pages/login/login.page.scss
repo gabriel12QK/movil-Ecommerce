@@ -1,0 +1,54 @@
+ion-toolbar {
+    --background: #242424 !important;
+    --border-width: 25px;
+    --opacity: 0px;
+    --border-color: #242424 !important;
+}
+
+ion-content {
+    --background: #242424;
+}
+
+ion-list {
+    background-color: #242424;
+}
+
+ion-item {
+    --background: #242424;
+}
+
+form {
+    background-color: #242424;
+}
+
+ion-input {
+    --background: #ffffff !important;
+    --padding-bottom: 8px;
+    --padding-top: 8px;
+    --color: rgb(0, 0, 0);
+    --padding-start: 10px !important;
+    ;
+    border-radius: 10px;
+    font-family: "Noto Sans", noto;
+    font-size: 18px;
+}
+
+ion-button {
+    --border-radius: 10px;
+    margin-right: 14px !important;
+    margin-left: 4px !important;
+    font-family: "Noto Sans", noto;
+    font-size: 20px;
+    --background: #59B220;
+}
+
+a {
+    text-decoration: none;
+    font-family: "Noto Sans", noto;
+    font-size: 13px;
+    color: #99aab5;
+}
+
+ion-toolbar {
+    --background: #242424 !important;
+}
