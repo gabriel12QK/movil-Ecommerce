@@ -1,0 +1,59 @@
+ion-toolbar {
+    --background: #242424 !important;
+    --border-width: 25px;
+    --opacity: 0px;
+    --border-color: #242424 !important;
+}
+
+form {
+    background-color: #242424;
+}
+
+ion-content {
+    --background: #242424;
+}
+
+ion-input {
+    --background: #ffffff !important;
+    --padding-bottom: 8px;
+    --padding-top: 8px;
+    --color: rgb(0, 0, 0);
+    --padding-start: 10px !important;
+    border-radius: 3px;
+    font-family: "Poppins";
+    font-size: 18px;
+}
+
+ion-list {
+    background-color: #242424;
+}
+
+ion-item {
+    --background: #242424;
+}
+
+ion-button {
+    --background: #F7881F;
+    --border-radius: 10px;
+    margin-right: 14px !important;
+    margin-left: 4px !important;
+    font-family: "Poppins";
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+    font-family: "Poppins";
+    font-size: 20px;
+    color: #99aab5;
+}
+ion-checkbox {
+    --background-checked: #F7881F;
+  }
+  
+  ion-checkbox::part(container) {
+    border-radius: 6px;
+    border: 2px solid #F7881F;
+  }
+
+  
