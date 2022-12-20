@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-fab slot="start">
+      <ion-fab-button>
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+      <ion-title> Perfil de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list class="ion-padding" >
+    <ion-row>
+      <ion-col size="12">
+        <ion-item lines="none">
+          <div class="mx-auto d-flex flex-column justify-content-center align-items-center" style="margin: auto;">
+
+              <ion-img *ngIf="usuario?.imagen !== null" class="ion-margin" style="border-radius: 100%; max-width:7rem; max-height: 7rem; overflow: hidden; margin: auto;" [src]="" (click)="imageInput.click()">
+                <input class="d-none" #imageInput type="file" (change)="getFile($event)">
+              </ion-img>
+              <template #view></template>
+              <ion-img *ngIf="usuario?.imagen === null" class="ion-margin" style="border-radius: 100%; max-width:7rem; max-height: 7rem; overflow: hidden;margin: auto;" [src]="'../../../assets/default-user.png'" (click)="imageInput.click()"> <input class="d-none" #imageInput type="file" (change)="getFile($event)"></ion-img>
+              <ion-label style="font-size: 20px;" >Cambiar foto de perfil</ion-label>
+          </div>
+      </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-button class="mx-auto" style="--background: #F7881F;margin: auto;">
+              <span class="text-white" >Editar perfil</span>
+          </ion-button>
+      </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-row style="padding: 0;">
+          <ion-col size="6" style="padding-left: 0;">
+            <ion-item lines="none">
+              <ion-row>
+                <ion-col size="12">
+                  <ion-label class="fs-6 mx-2">Nombre</ion-label>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-label class="fs-6 text-start">{{usuario?.name}}</ion-label>
+                </ion-col>
+              </ion-row>
+          </ion-item>
+          </ion-col>
+
+          <ion-col size="6" style="padding-left: 0; ">
+            <ion-item lines="none">
+              <ion-row>
+                <ion-col size="12">
+                  <ion-label class="fs-6 mx-2">Apellido</ion-label>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-label class="fs-6 text-start">{{usuario?.last_name}}</ion-label>
+                </ion-col>
+              </ion-row>
+          </ion-item>
+          </ion-col>
+        </ion-row>
+       
+      </ion-col>
+      
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-label class="fs-6 mx-2">Teléfono</ion-label>
+          <ion-label class="fs-6">{{usuario?.telefono}}</ion-label>
+      </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-label class="fs-6 mx-2">Email</ion-label>
+          <ion-label class="fs-6">{{usuario?.email}}</ion-label>
+      </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-label class="fs-6 mx-2">Referencia</ion-label>
+          <ion-label class="fs-6">{{usuario?.referencia}}</ion-label>
+      </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-label class="fs-6 mx-2">Direccion</ion-label>
+          <ion-label class="fs-6">{{usuario?.direccion}}</ion-label>
+      </ion-item>
+      </ion-col>
+      
+    </ion-row>
+
+     
+     
+     
+     
+     
+     
+      
+      <ion-item lines="none">
+      </ion-item>
+      <ion-item lines="none" routerLink="configuser/{{usuario?.id}}">
+          <ion-icon name="settings-outline"></ion-icon>
+          <ion-label class="fs-6 mx-2">Configuración y privacidad</ion-label>
+      </ion-item>
+      <ion-item lines="none" lines="none">
+          <ion-icon name="exit-outline"></ion-icon>
+          <ion-label class="fs-6 mx-2">Cerrar sesión</ion-label>
+      </ion-item>
+  </ion-list>
+  
+ 
+</ion-content>

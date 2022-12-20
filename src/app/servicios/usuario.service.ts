@@ -48,4 +48,8 @@ export class UsuarioService {
     localStorage.setItem('rol', token.rol);
   }
 
+  showUser(id:any){
+    return this.http.get<any>(`${environment.urlApi}show/${id}`)
+  }
+
 }
