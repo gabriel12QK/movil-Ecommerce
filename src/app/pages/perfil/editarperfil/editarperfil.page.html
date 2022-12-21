@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="cancel()" [strong]="true">
+            <ion-icon style="color: #F7881F;" name="close-outline"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+      <ion-title style="font-size: 18px;">Cambia tus datos</ion-title>
+      <ion-buttons slot="end">
+          <ion-button (click)="confirm()" [strong]="true">
+              <ion-icon style="color: #59B220;" name="checkmark-outline"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list class="h-100">
+      <form [formGroup]="form" novalidate>
+          <ion-item>
+              <ion-label position="floating">Nombres</ion-label>
+              <ion-input type="text" clearInput value="clear me" formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label position="floating">Apellidos</ion-label>
+              <ion-input type="text" clearInput value="clear me" formControlName="last_name"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label position="floating">Telefono</ion-label>
+              <ion-input type="number" clearInput value="clear me" formControlName="telefono"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label position="floating">Direccion</ion-label>
+              <ion-input type="text" clearInput value="clear me" formControlName="direccion"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Referencia</ion-label>
+            <ion-input type="number" clearInput value="clear me" formControlName="referencia"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="text" clearInput value="clear me" formControlName="email"></ion-input>
+      </ion-item>
+      </form>
+  </ion-list>
+</ion-content>

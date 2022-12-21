@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-fab slot="start">
-      <ion-fab-button>
+      <ion-fab-button style="--background: #F7881F">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-fab-button>
     </ion-fab>
@@ -15,11 +15,12 @@
         <ion-item lines="none">
           <div class="mx-auto d-flex flex-column justify-content-center align-items-center" style="margin: auto;">
 
-              <ion-img *ngIf="usuario?.imagen !== null" class="ion-margin" style="border-radius: 100%; max-width:7rem; max-height: 7rem; overflow: hidden; margin: auto;" [src]="" (click)="imageInput.click()">
-                <input class="d-none" #imageInput type="file" (change)="getFile($event)">
+              <ion-img *ngIf="usuario?.imagen !== null" class="ion-margin" style="border-radius: 100%; max-width:7rem; max-height: 7rem; overflow: hidden; margin: auto;" [src]="fileSelect||'../../../assets/default-user.png'" (click)="imageInput.click()">
+                <input class="d-none" #imageInput (change)="getFile($event)" type="file" (change)="getFile($event)">
               </ion-img>
               <template #view></template>
-              <ion-img *ngIf="usuario?.imagen === null" class="ion-margin" style="border-radius: 100%; max-width:7rem; max-height: 7rem; overflow: hidden;margin: auto;" [src]="'../../../assets/default-user.png'" (click)="imageInput.click()"> <input class="d-none" #imageInput type="file" (change)="getFile($event)"></ion-img>
+              <ion-img *ngIf="usuario?.imagen === null" class="ion-margin" style="border-radius: 100%; max-width:7rem; max-height: 7rem; overflow: hidden;margin: auto;" [src]="fileSelect||'../../../assets/default-user.png'" (click)="imageInput.click()"> 
+                <input class="d-none" #imageInput type="file" (change)="getFile($event)"></ion-img>
               <ion-label style="font-size: 20px;" >Cambiar foto de perfil</ion-label>
           </div>
       </ion-item>
@@ -27,7 +28,7 @@
       <ion-col size="12">
         <ion-item lines="none">
           <ion-button class="mx-auto" style="--background: #F7881F;margin: auto;">
-              <span class="text-white" >Editar perfil</span>
+              <span class="text-white" (click)="editUsuario()" >Editar perfil</span>
           </ion-button>
       </ion-item>
       </ion-col>
@@ -87,25 +88,19 @@
       </ion-item>
       </ion-col>
       
-    </ion-row>
-
-     
-     
-     
-     
-     
-     
-      
-      <ion-item lines="none">
+    </ion-row>   
+      <!-- <ion-item lines="none">
       </ion-item>
       <ion-item lines="none" routerLink="configuser/{{usuario?.id}}">
           <ion-icon name="settings-outline"></ion-icon>
           <ion-label class="fs-6 mx-2">Configuración y privacidad</ion-label>
-      </ion-item>
-      <ion-item lines="none" lines="none">
+      </ion-item>   -->
+        <ion-button (click)="logout()" class="ion-no-padding ion-no-margin" expand="block" style="--background: #59B220;margin-top: 20px;" type="submit">
           <ion-icon name="exit-outline"></ion-icon>
-          <ion-label class="fs-6 mx-2">Cerrar sesión</ion-label>
-      </ion-item>
+          <span style="color:white; font-weight: bold;letter-spacing: 1pt;">
+          Cerrar sesion
+     </span>
+      </ion-button>
   </ion-list>
   
  
