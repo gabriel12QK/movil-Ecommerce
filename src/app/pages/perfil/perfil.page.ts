@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
+import { VistaKitComponent } from 'src/app/components/vista-kit/vista-kit.component';
 import { VistaProductoComponent } from 'src/app/components/vista-producto/vista-producto.component';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { environment } from 'src/environments/environment';
@@ -131,4 +132,19 @@ url:any
     //   this.serviceLoadingService.alert('Seleccione una disciplina');
     // }
   }
+  async openKit(){
+    // if (this.selectedDiscipline > 0) {
+       const modal = await this.modalCtrl.create({
+         cssClass: '',
+         component: VistaKitComponent,
+         componentProps: {
+           kitId:2
+         },
+       });
+       await modal.present();
+       const { data } = await modal.onDidDismiss();
+     // } else {
+     //   this.serviceLoadingService.alert('Seleccione una disciplina');
+     // }
+   }
 }

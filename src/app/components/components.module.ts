@@ -4,10 +4,11 @@ import { IonicModule } from '@ionic/angular';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { VistaProductoComponent } from './vista-producto/vista-producto.component';
+import { VistaKitComponent } from './vista-kit/vista-kit.component';
 
 
 @NgModule({
-  declarations: [VistaProductoComponent],
+  declarations: [VistaProductoComponent,VistaKitComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -16,6 +17,7 @@ import { VistaProductoComponent } from './vista-producto/vista-producto.componen
   ],
   exports:[
     VistaProductoComponent,
+    VistaKitComponent,
   ]
 })
 export class ComponentsModule { }

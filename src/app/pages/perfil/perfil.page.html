@@ -88,6 +88,24 @@
       </ion-item>
       </ion-col>
       
+      <ion-col size="12">
+        <ion-button (click)="openProducto()" class="ion-no-padding ion-no-margin" expand="block" style="--background: #59B220;margin-top: 20px;" type="submit">
+          <ion-icon name="exit-outline"></ion-icon>
+          <span style="color:white; font-weight: bold;letter-spacing: 1pt;">
+            Show producto
+     </span>
+      </ion-button>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-button (click)="openKit()" class="ion-no-padding ion-no-margin" expand="block" style="--background: #59B220;margin-top: 20px;" type="submit">
+          <ion-icon name="exit-outline"></ion-icon>
+          <span style="color:white; font-weight: bold;letter-spacing: 1pt;">
+         Show kit
+     </span>
+      </ion-button>
+      </ion-col>
+      
     </ion-row>   
       <!-- <ion-item lines="none">
       </ion-item>
@@ -101,12 +119,8 @@
           Cerrar sesion
      </span>
       </ion-button>
-      <ion-button (click)="openProducto()" class="ion-no-padding ion-no-margin" expand="block" style="--background: #59B220;margin-top: 20px;" type="submit">
-        <ion-icon name="exit-outline"></ion-icon>
-        <span style="color:white; font-weight: bold;letter-spacing: 1pt;">
-        Cerrar sesion
-   </span>
-    </ion-button>
+
+   
   </ion-list>
   
  
