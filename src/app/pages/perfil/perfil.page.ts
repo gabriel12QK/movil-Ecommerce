@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
+import { VistaProductoComponent } from 'src/app/components/vista-producto/vista-producto.component';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { environment } from 'src/environments/environment';
 import { EditarperfilPage } from './editarperfil/editarperfil.page';
@@ -22,7 +23,7 @@ url:any
     private modalCtrl:ModalController,
     private router:Router
   ) { 
-    this.url=environment.url
+    this.url=environment.urlPersona
   }
 
   ngOnInit() {
@@ -113,5 +114,21 @@ url:any
     if(this.usuarioService.logout()){
       this.router.navigate(['login']);
     }
+  }
+
+  async openProducto(){
+   // if (this.selectedDiscipline > 0) {
+      const modal = await this.modalCtrl.create({
+        cssClass: '',
+        component: VistaProductoComponent,
+        componentProps: {
+          productoId:2
+        },
+      });
+      await modal.present();
+      const { data } = await modal.onDidDismiss();
+    // } else {
+    //   this.serviceLoadingService.alert('Seleccione una disciplina');
+    // }
   }
 }

@@ -15,7 +15,7 @@
         <ion-item lines="none">
           <div class="mx-auto d-flex flex-column justify-content-center align-items-center" style="margin: auto;">
 
-              <ion-img *ngIf="usuario?.imagen !== null" class="ion-margin" style="border-radius: 100%; max-width:7rem; max-height: 7rem; overflow: hidden; margin: auto;" [src]="fileSelect||'../../../assets/default-user.png'" (click)="imageInput.click()">
+              <ion-img *ngIf="usuario?.imagen !== null" class="ion-margin" style="border-radius: 100%; max-width:7rem; max-height: 7rem; overflow: hidden; margin: auto;" [src]="fileSelect||url+usuario?.id+'/'+usuario?.imagen" (click)="imageInput.click()">
                 <input class="d-none" #imageInput (change)="getFile($event)" type="file" (change)="getFile($event)">
               </ion-img>
               <template #view></template>
@@ -101,6 +101,12 @@
           Cerrar sesion
      </span>
       </ion-button>
+      <ion-button (click)="openProducto()" class="ion-no-padding ion-no-margin" expand="block" style="--background: #59B220;margin-top: 20px;" type="submit">
+        <ion-icon name="exit-outline"></ion-icon>
+        <span style="color:white; font-weight: bold;letter-spacing: 1pt;">
+        Cerrar sesion
+   </span>
+    </ion-button>
   </ion-list>
   
  
