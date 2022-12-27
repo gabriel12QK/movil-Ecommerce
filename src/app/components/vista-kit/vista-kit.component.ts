@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { KitsService } from 'src/app/servicios/kits.service';
 
 @Component({
@@ -11,8 +12,10 @@ export class VistaKitComponent implements OnInit {
    kit:any
    url:any
    contenidoKit:any
+   venta:number=0
   constructor(
-    private kitService:KitsService
+    private kitService:KitsService,
+    private modalCtrl:ModalController
   ) { }
 
   ngOnInit() {
@@ -29,5 +32,23 @@ export class VistaKitComponent implements OnInit {
         }
     })
   }
+  cancel(){
+    this.modalCtrl.dismiss()
+  }
+  add(letra:any){
+
+    switch (letra) {
+      case 'A':
+                 this.venta++
+        break;
+        case 'B':
+                  if (this.venta>0) {
+                    this.venta--
+                  }
+          break;
+      default:
+        break;
+    }
+   }
 
 }

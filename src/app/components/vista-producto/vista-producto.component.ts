@@ -13,6 +13,7 @@ export class VistaProductoComponent implements OnInit {
   @Input() productoId:any
   url:any
   producto:any
+  venta:number=0
   constructor( 
     private productoService:ProductoService,
     private modalCtrl:ModalController
@@ -27,11 +28,28 @@ export class VistaProductoComponent implements OnInit {
   ShowProducto(){
         this.productoService.showProducto(this.productoId).subscribe({
           next:(res)=>{
-            this.producto=res;
+            this.producto=res[0];
             console.log(this.producto);
            // debugger
             }
         })
   }
+  cancel(){
+    this.modalCtrl.dismiss()
+  }
+ add(letra:any){
 
+  switch (letra) {
+    case 'A':
+               this.venta++
+      break;
+      case 'B':
+                if (this.venta>0) {
+                  this.venta--
+                }
+        break;
+    default:
+      break;
+  }
+ }
 }

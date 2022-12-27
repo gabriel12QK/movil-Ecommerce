@@ -10,6 +10,6 @@ export class ProductoService {
   constructor(private http:HttpClient) { }
 
   showProducto(id:any){
-    return this.http.get<any>(`${environment.urlApi}producto/${id}`)
+    return this.http.get<any>(`${environment.urlApi}showProducto/${id}`)
   }
 }
