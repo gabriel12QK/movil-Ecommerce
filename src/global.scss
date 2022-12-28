@@ -24,3 +24,12 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+    font-family: poppins;
+    src: url("../src/assets/fonts/poppins.woff2");
+  }
+  
+  body, span, button, h1,h2,h3,h4,h5,h6,p,ion-item, ion-title,ion-button{
+    font-family: 'poppins', 
+  } 

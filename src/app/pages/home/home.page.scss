@@ -1,0 +1,10 @@
+ion-toolbar{
+    background-color: #323232;
+}
+ion-title{
+    background-color: #323232;
+}
+
+ion-content::part(background) {
+    background: #242424;
+  }
