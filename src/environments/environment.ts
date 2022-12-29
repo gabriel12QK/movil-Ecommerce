@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   urlApi:"http://127.0.0.1:8000/api/",
- // url:"https://buckets3-appfutbol.s3.amazonaws.com/",
+  urlPersona:"http://127.0.0.1:8000/storage/images/persona/",
+  urlProducto:"http://127.0.0.1:8000/storage/images/producto/",
  fileSelect: "../../../assets/default-user.png",
 };
 

@@ -48,4 +48,35 @@ export class UsuarioService {
     localStorage.setItem('rol', token.rol);
   }
 
+  showUser(id:any){
+    return this.http.get<any>(`${environment.urlApi}show/${id}`)
+  }
+
+  updateImage(form:any){
+    const params = new FormData();
+    params.append('imagen', form.imagen);
+    return this.http.post<any>(`${environment.urlApi}imagen-update/${form.id}`,params)
+  }
+
+  updateUser(form:any){
+    const params=new FormData();
+    params.append('name',form.name);
+    params.append('last_name',form.last_name);
+    params.append('telefono',form.telefono);
+    params.append('direccion',form.direccion);
+    params.append('referencia',form.referencia);
+    params.append('email',form.email);
+    return this.http.post<any>(`${environment.urlApi}usuario-update/${form.id}`,params)
+  }
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('typeUserId');
+    localStorage.removeItem('id');
+    localStorage.removeItem('rol');
+    localStorage.removeItem('email');
+    localStorage.removeItem('idEvento');
+    localStorage.removeItem('unver');
+    return true;
+  }
+
 }
