@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
 import { VistaKitComponent } from 'src/app/components/vista-kit/vista-kit.component';
 import { VistaProductoComponent } from 'src/app/components/vista-producto/vista-producto.component';
+import { VistaPromocionProductoComponent } from 'src/app/components/vista-promocion-producto/vista-promocion-producto.component';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { environment } from 'src/environments/environment';
 import { EditarperfilPage } from './editarperfil/editarperfil.page';
@@ -139,6 +140,21 @@ url:any
          component: VistaKitComponent,
          componentProps: {
            kitId:2
+         },
+       });
+       await modal.present();
+       const { data } = await modal.onDidDismiss();
+     // } else {
+     //   this.serviceLoadingService.alert('Seleccione una disciplina');
+     // }
+   }
+    async openPromocion(){
+    // if (this.selectedDiscipline > 0) {
+       const modal = await this.modalCtrl.create({
+         cssClass: '',
+         component: VistaPromocionProductoComponent,
+         componentProps: {
+           promocionId:1
          },
        });
        await modal.present();

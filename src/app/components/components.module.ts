@@ -5,10 +5,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { VistaProductoComponent } from './vista-producto/vista-producto.component';
 import { VistaKitComponent } from './vista-kit/vista-kit.component';
+import { VistaPromocionProductoComponent } from './vista-promocion-producto/vista-promocion-producto.component';
 
 
 @NgModule({
-  declarations: [VistaProductoComponent,VistaKitComponent],
+  declarations: [VistaProductoComponent,VistaKitComponent,VistaPromocionProductoComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -18,6 +19,7 @@ import { VistaKitComponent } from './vista-kit/vista-kit.component';
   exports:[
     VistaProductoComponent,
     VistaKitComponent,
+    VistaPromocionProductoComponent,
   ]
 })
 export class ComponentsModule { }
