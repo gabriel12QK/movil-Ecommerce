@@ -1,0 +1,46 @@
+ion-toolbar{
+    background-color: #323232;
+}
+
+ion-content::part(background) {
+    background: #242424;
+  }
+
+  ion-slides {
+    height: 100%;
+  }
+
+  .swiper-slide {
+    display: block;
+  }
+
+
+  .swiper-slide img {
+    max-height: 100%;
+    max-width: 100%;
+    pointer-events: none;
+  }
+
+
+
+
+.card-title{
+    text-align: center;
+    color: #F8F8F8;
+}
+
+ion-card{
+    background-color: #323232;
+}
+
+ion-card,img{
+ max-width: 80%;
+ text-align: center;
+ 
+}
+
+.marcas,img{
+    width: 100%;
+    height: auto;
+    
+}
