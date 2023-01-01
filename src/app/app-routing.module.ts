@@ -28,8 +28,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'ofertas-kits',
-    loadChildren: () => import('./pages/ofertas-kits/ofertas-kits.module').then( m => m.OfertasKitsPageModule)
+    path: 'search',
+    loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
   }
 
 ];
