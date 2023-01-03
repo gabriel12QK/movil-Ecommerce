@@ -30,39 +30,12 @@
     </ion-col>
   </ion-row>
 <ion-grid >
-  <ion-row class="ion-justify-content-around">
-    <ion-col size="5">    
-      <ion-card>
-        <img (click)="opencategory()" src="./assets/img/imgCategorias/Restaurante.png"/>
-        <div class="card-title">Restaurantes</div>
-      </ion-card>
-    </ion-col>
-    <ion-col size="5" >    
-      <ion-card>
-        <img src="./assets/img/imgCategorias/Supermercado.png"/>
-        <div class="card-title">Supermercados</div>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-<ion-grid >
   <ion-row>
-    <ion-col>    
-      <ion-card>
-        <img src="./assets/img/imgCategorias/Mascotas.png"/>
-        <div class="card-title">Mascotas</div>
-      </ion-card>
-    </ion-col>
-    <ion-col>    
-      <ion-card>
-        <img src="./assets/img/imgCategorias/Bebidas.png"/>
-        <div class="card-title">Bebidas</div>
-      </ion-card>
-    </ion-col>
-    <ion-col>    
-      <ion-card>
-        <img src="./assets/img/imgCategorias/Farmacias.png"/>
-        <div class="card-title">Farmacias</div>
+    <div></div>
+    <ion-col *ngFor="let item of categoria">    
+      <ion-card >
+        <img src="./assets/img/default-img.png"/>
+        <div class="card-title">{{item.descripcion}}</div>
       </ion-card>
     </ion-col>
   </ion-row>
