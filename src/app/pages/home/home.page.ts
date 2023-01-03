@@ -5,6 +5,7 @@ import { ProductoService } from 'src/app/servicios/producto.service';
 import { environment } from 'src/environments/environment';
 import { VistaProductCategoryComponent } from 'src/app/components/vista-product-category/vista-product-category.component';
 import { CategoriasService } from 'src/app/servicios/categorias.service';
+import { identity } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -43,17 +44,16 @@ export class HomePage implements OnInit {
       next:(res)=>{
         this.categoria=res;
         console.log(res);
-        debugger
         }
     })
 }
-  async opencategory(){
+  async opencategory(Id:any){
     // if (this.selectedDiscipline > 0) {
       const modal = await this.modalCtrl.create({
         cssClass: '',
         component: VistaProductCategoryComponent,
         componentProps: {
-          productoId:1
+          productoId:Id
         },
       });
       await modal.present();

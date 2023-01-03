@@ -29,7 +29,6 @@ export class VistaProductCategoryComponent implements OnInit {
           next:(res)=>{
             this.producto=res;
             console.log(res);
-          debugger
             }
         })
   }

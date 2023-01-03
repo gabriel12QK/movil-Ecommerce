@@ -31,10 +31,9 @@
   </ion-row>
 <ion-grid >
   <ion-row>
-    <div></div>
     <ion-col *ngFor="let item of categoria">    
       <ion-card >
-        <img src="./assets/img/default-img.png"/>
+        <img (click)="opencategory(item.id)" src="./assets/img/default-img.png"/>
         <div class="card-title">{{item.descripcion}}</div>
       </ion-card>
     </ion-col>
