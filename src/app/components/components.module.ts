@@ -7,10 +7,11 @@ import { VistaProductoComponent } from './vista-producto/vista-producto.componen
 import { VistaKitComponent } from './vista-kit/vista-kit.component';
 import { VistaPromocionProductoComponent } from './vista-promocion-producto/vista-promocion-producto.component';
 import { VistaProductCategoryComponent } from './vista-product-category/vista-product-category.component';
+import { ProductoMarcaComponent } from './producto-marca/producto-marca.component';
 
 
 @NgModule({
-  declarations: [VistaProductoComponent,VistaKitComponent,VistaPromocionProductoComponent,  VistaProductCategoryComponent],
+  declarations: [VistaProductoComponent,VistaKitComponent,VistaPromocionProductoComponent,  VistaProductCategoryComponent,ProductoMarcaComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -22,6 +23,7 @@ import { VistaProductCategoryComponent } from './vista-product-category/vista-pr
     VistaKitComponent,
     VistaPromocionProductoComponent,
     VistaProductCategoryComponent,
+    ProductoMarcaComponent,
   ]
 })
 export class ComponentsModule { }
