@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ofertas Kits</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+ <div *ngFor="let item of kit" (click)="showKit()">
+  <ion-card  >
+    <img [src]="url+item.id+'/'+item.imagen" />
+    <ion-card-content>
+      <ion-card-title>{{item.descripcion}}</ion-card-title>
+      <ion-item>La Promo inicia el:  {{item.fecha_inicio}}</ion-item>
+      <ion-item >La Promo Finaliza el: {{item.fecha_fin}}</ion-item>
+      <ion-item>{{item.descuento}} % de Descuento</ion-item>
+      <ion-item >PVP: {{item.precioKit}}</ion-item>
+    </ion-card-content>
+  </ion-card>
+ </div>
+  
+
+</ion-content>

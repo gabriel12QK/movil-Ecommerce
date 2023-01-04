@@ -12,6 +12,6 @@ export class KitsService {
 
 
   ShowKits(id:any){
-    return this.http.get<any>(`${environment.urlApi}showkits/${id}`)
+    return this.http.get<any>(`${environment.urlApi}showOfertasKits`)
   }
 }

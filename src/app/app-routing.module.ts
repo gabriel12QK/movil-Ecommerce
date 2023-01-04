@@ -18,7 +18,21 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
@@ -33,7 +47,13 @@ const routes: Routes = [
   {
     path: 'vista-producto-categoria',
     loadChildren: () => import('./pages/vista-producto-categoria/vista-producto-categoria.module').then( m => m.VistaProductoCategoriaPageModule)
+  },
+  {
+    path: 'ofertas-kits',
+    loadChildren: () => import('./pages/ofertas-kits/ofertas-kits.module').then( m => m.OfertasKitsPageModule)
+
   }
+
 
 ];
 
