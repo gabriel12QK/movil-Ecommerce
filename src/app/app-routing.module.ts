@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
+  },  {
+    path: 'ofertas-kits',
+    loadChildren: () => import('./pages/ofertas-kits/ofertas-kits.module').then( m => m.OfertasKitsPageModule)
   }
+
 
 ];
 
