@@ -43,17 +43,17 @@ export class HomePage implements OnInit {
       next:(res)=>{
         this.categoria=res;
         console.log(res);
-        debugger
+        //debugger
         }
     })
 }
-  async opencategory(){
+  async opencategory(id:any){
     // if (this.selectedDiscipline > 0) {
       const modal = await this.modalCtrl.create({
         cssClass: '',
         component: VistaProductCategoryComponent,
         componentProps: {
-          productoId:1
+          productoId:id
         },
       });
       await modal.present();

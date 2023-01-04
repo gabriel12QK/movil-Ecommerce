@@ -33,7 +33,7 @@
   <ion-row>
     <div></div>
     <ion-col *ngFor="let item of categoria">    
-      <ion-card >
+      <ion-card (click)="opencategory(item.id)" >
         <img src="./assets/img/default-img.png"/>
         <div class="card-title">{{item.descripcion}}</div>
       </ion-card>
