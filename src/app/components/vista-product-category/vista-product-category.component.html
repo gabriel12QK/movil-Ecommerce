@@ -5,17 +5,17 @@
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-fab-button>
     </ion-fab>
-    <ion-title>Seleccion</ion-title>
+    <ion-title *ngFor="let item of producto">{{item.descripcion}}</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-grid fixed>
+  <ion-grid >
     <ion-row>
-      <ion-col size="12" style="text-align:center;margin-top:15px;font-weight:bold">
-          <ion-img [src]="url+producto?.id+'/'+producto?.imagen" class="ion-margin" style=" max-width:15rem; max-height: 15rem; overflow: hidden; margin: auto;"></ion-img>
-      </ion-col>
-      <ion-col size="12"  style="text-align:center;margin-top:15px;font-weight:bold; font-size:20px;">
-        <ion-label>{{producto?.nombre}}</ion-label>
+      <ion-col *ngFor="let item of producto">    
+        <ion-card >
+          <img  [src]="url+item.id+'/'+item.imagen" />
+          <div class="card-title">{{item.nombre}}</div>
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
