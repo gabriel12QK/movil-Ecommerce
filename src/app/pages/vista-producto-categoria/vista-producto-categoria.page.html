@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-fab slot="start">
+      <ion-fab-button style="--background: #F7881F;" (click)="cancel()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-title *ngFor="let item of producto">{{item.descripcion}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-searchbar placeholder="buscar"  (ionChange)="buscar($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+  <ion-grid >
+    <ion-row>
+      <ion-col>    
+        <ion-card  *ngFor="let item of producto | search: text">
+          <img  [src]="url+item.id+'/'+item.imagen" />
+          <div class="card-title">{{item.nombre}}</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

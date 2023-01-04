@@ -3,8 +3,9 @@ import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
 import { ProductoService } from 'src/app/servicios/producto.service';
 import { environment } from 'src/environments/environment';
-import { VistaProductCategoryComponent } from 'src/app/components/vista-product-category/vista-product-category.component';
 import { CategoriasService } from 'src/app/servicios/categorias.service';
+import { identity } from 'rxjs';
+import { VistaProductoCategoriaPage } from '../vista-producto-categoria/vista-producto-categoria.page';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -43,25 +44,26 @@ export class HomePage implements OnInit {
       next:(res)=>{
         this.categoria=res;
         console.log(res);
-        //debugger
         }
     })
 }
-  async opencategory(id:any){
-    // if (this.selectedDiscipline > 0) {
-      const modal = await this.modalCtrl.create({
-        cssClass: '',
-        component: VistaProductCategoryComponent,
-        componentProps: {
-          productoId:id
-        },
-      });
-      await modal.present();
-      const { data } = await modal.onDidDismiss();
-     // } else {
-     //   this.serviceLoadingService.alert('Seleccione una disciplina');
-     // }
-  }
+
+async openProductoCategoria(id:any){
+  // if (this.selectedDiscipline > 0) {
+     const modal = await this.modalCtrl.create({
+       cssClass: '',
+       component: VistaProductoCategoriaPage,
+       componentProps: {
+         productoId:id
+       },
+     });
+     await modal.present();
+     const { data } = await modal.onDidDismiss();
+   // } else {
+   //   this.serviceLoadingService.alert('Seleccione una disciplina');
+   // }
+ }
+ 
 
 
 }

@@ -9,11 +9,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InterceptorService } from './interceptors/interceptor.service';
-import { SearchPipe } from './pipes/search.pipe';
+import { PipeModule } from './pipes/pipe.module';
+
 
 @NgModule({
-  declarations: [AppComponent, SearchPipe],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,],
+  declarations: [AppComponent],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, PipeModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   {
       provide: HTTP_INTERCEPTORS,

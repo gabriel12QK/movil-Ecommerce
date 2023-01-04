@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'vista-producto-categoria',
+    loadChildren: () => import('./pages/vista-producto-categoria/vista-producto-categoria.module').then( m => m.VistaProductoCategoriaPageModule)
   }
 
 ];

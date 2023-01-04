@@ -13,7 +13,7 @@ export class SearchPipe implements PipeTransform {
     texto = texto.toLowerCase();
 
     return arreglo.filter( item => {
-      console.log(item.nombre.toLowerCase().includes(texto));
+  /*     console.log(item.nombre.toLowerCase().includes(texto)); */
       return item.nombre.toLowerCase().includes(texto);
      
       
