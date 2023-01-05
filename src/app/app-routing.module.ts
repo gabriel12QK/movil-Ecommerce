@@ -56,9 +56,14 @@ const routes: Routes = [
   {
     path: 'producto-marca',
     loadChildren: () => import('./pages/producto-marca/producto-marca.module').then( m => m.ProductoMarcaPageModule)
-  },  {
+  },
+  {
     path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'ofertas-producto',
+    loadChildren: () => import('./pages/ofertas-producto/ofertas-producto.module').then( m => m.OfertasProductoPageModule)
   }
 
 
