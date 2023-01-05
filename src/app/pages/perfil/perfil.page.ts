@@ -169,7 +169,7 @@ url:any
          cssClass: '',
          component: ProductoMarcaPage,
          componentProps: {
-           marcaId:2
+           marcaId:1
          },
        });
        await modal.present();

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar style="--background: #323232;">
+    <ion-item style="--background: #323232;">
+      <ion-button routerLink="/perfil" size="small" style="  --background: #242424; --color: #F8F8F8; font-size: 10px;">Calle bolivar, Pasaje 4</ion-button>    
+      <ion-avatar slot="end">
+        <img  routerLink="/perfil" alt="Perfil usuario" src="./assets/default-user.png" />
+    </ion-avatar>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div style="display: flex; align-items: center; width: 100%; margin-left: 10px;margin-top: 10px;">
+  <ion-label style="font-size: 25px;font-family: poppins;font-style: unset;">Tu Pedido</ion-label>
+</div>
+<ion-row >
+  <ion-col size="12"  style="padding: 0px; margin: 0px;">
+    <ion-card >
+     <ion-row>
+      <ion-col size="7">
+
+          <ion-row>
+            <ion-col size="12" style="text-align: center; font-size: 15px;font-style: unset;">
+               <ion-card-title style="font-size:20px ;">nombre producto</ion-card-title> 
+            </ion-col>
+            <ion-col size="12">
+              <label>Categoria:bebida</label>
+            </ion-col>
+            <ion-col size="12">
+              <label>Tamaño:1 kilo</label>
+            </ion-col>
+            <ion-col size="6">
+              <label>Cantidad:$0.00</label>
+            </ion-col>
+            <ion-col size="6">
+              <label>$0.00</label>
+            </ion-col>
+           
+          </ion-row>
+
+      </ion-col>
+
+      <ion-col size="5">
+       <ion-img [src]="" style="max-width:7rem; max-height: 7rem;"></ion-img>
+      </ion-col>
+
+    </ion-row>
+    </ion-card>
+  </ion-col>
+  <ion-col size="12">
+      <ion-label  style="font-size: 25px;font-family: poppins;font-style: unset;">Subtotal: $19.20</ion-label>
+  </ion-col>
+  <ion-col size="12">
+    <ion-button class="ion-no-padding ion-no-margin" expand="block" style="font-family: poppins;--background: #59B220;margin-top: 20px;" type="submit">
+      <span style="color:white; font-weight: bold;letter-spacing: 1pt;">
+      Pagar
+ </span>
+  </ion-button>
+  </ion-col>
+</ion-row>
+</ion-content>
