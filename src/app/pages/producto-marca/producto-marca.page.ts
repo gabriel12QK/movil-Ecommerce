@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { ProductoService } from 'src/app/servicios/producto.service';
 import { environment } from 'src/environments/environment';
 import { error } from 'console';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class ProductoMarcaPage implements OnInit {
   constructor(
     private productoService:ProductoService,
     private modalCtrl:ModalController,
+    private router:Router,
   ) { 
     this.url=environment.urlProducto
   }

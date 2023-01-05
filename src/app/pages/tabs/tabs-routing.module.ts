@@ -19,6 +19,10 @@ const routes: Routes = [
           loadChildren: () => import('../search/search.module').then( m => m.SearchPageModule)
         },
         {
+          path: 'carrito',
+          loadChildren: () => import('../carrito/carrito.module').then( m => m.CarritoPageModule)
+        },      
+        {
           path:'',
          redirectTo:'home',
          pathMatch:'full'

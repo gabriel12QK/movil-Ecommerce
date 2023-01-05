@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-fab slot="start">
       <ion-fab-button style="--background: #F7881F;">
-        <ion-icon routerLink="/home" name="arrow-back-outline"></ion-icon>
+        <ion-icon routerLink="/tabs" name="arrow-back-outline"></ion-icon>
       </ion-fab-button>
     </ion-fab>
       <ion-title> Perfil de Usuario</ion-title>
@@ -91,24 +91,23 @@
           <ion-label class="fs-6">{{usuario?.direccion}}</ion-label>
       </ion-item>
       </ion-col>
-      
+      <ion-col size="12">
+        <ion-button (click)="logout()" class="ion-no-padding ion-no-margin" expand="block" style="--background: #59B220;margin-top: 20px;" type="submit">
+          <ion-icon name="exit-outline"></ion-icon>
+          <span style="color:white; font-weight: bold;letter-spacing: 1pt;">
+          Cerrar sesion
+     </span>
+      </ion-button>
+      </ion-col>
       <ion-col size="12">
         <ion-button (click)="openProductoMarca()" class="ion-no-padding ion-no-margin" expand="block" style="--background: #59B220;margin-top: 20px;" type="submit">
           <ion-icon name="exit-outline"></ion-icon>
           <span style="color:white; font-weight: bold;letter-spacing: 1pt;">
-            Show producto
+          producto
      </span>
       </ion-button>
       </ion-col>
-
-      <ion-col size="12">
-        <ion-button (click)="openKit()" class="ion-no-padding ion-no-margin" expand="block" style="--background: #59B220;margin-top: 20px;" type="submit">
-          <ion-icon name="exit-outline"></ion-icon>
-          <span style="color:white; font-weight: bold;letter-spacing: 1pt;">
-         Show kit
-     </span>
-      </ion-button>
-      </ion-col>
+      
       
     </ion-row>   
       <!-- <ion-item lines="none">
@@ -117,12 +116,7 @@
           <ion-icon name="settings-outline"></ion-icon>
           <ion-label class="fs-6 mx-2">Configuración y privacidad</ion-label>
       </ion-item>   -->
-        <ion-button (click)="logout()" class="ion-no-padding ion-no-margin" expand="block" style="--background: #59B220;margin-top: 20px;" type="submit">
-          <ion-icon name="exit-outline"></ion-icon>
-          <span style="color:white; font-weight: bold;letter-spacing: 1pt;">
-          Cerrar sesion
-     </span>
-      </ion-button>
+      
 
    
   </ion-list>
