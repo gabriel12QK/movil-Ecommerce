@@ -6,11 +6,11 @@ import { RouterModule } from '@angular/router';
 import { VistaProductoComponent } from './vista-producto/vista-producto.component';
 import { VistaKitComponent } from './vista-kit/vista-kit.component';
 import { VistaPromocionProductoComponent } from './vista-promocion-producto/vista-promocion-producto.component';
-import { ProductoMarcaComponent } from './producto-marca/producto-marca.component';
+
 
 
 @NgModule({
-  declarations: [VistaProductoComponent,VistaKitComponent,VistaPromocionProductoComponent,ProductoMarcaComponent],
+  declarations: [VistaProductoComponent,VistaKitComponent,VistaPromocionProductoComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -22,7 +22,6 @@ import { ProductoMarcaComponent } from './producto-marca/producto-marca.componen
     VistaProductoComponent,
     VistaKitComponent,
     VistaPromocionProductoComponent,
-    ProductoMarcaComponent,
   ]
 })
 export class ComponentsModule { }

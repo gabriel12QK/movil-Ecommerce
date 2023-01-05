@@ -52,7 +52,16 @@ const routes: Routes = [
     path: 'ofertas-kits',
     loadChildren: () => import('./pages/ofertas-kits/ofertas-kits.module').then( m => m.OfertasKitsPageModule)
 
+  },
+  {
+    path: 'producto-marca',
+    loadChildren: () => import('./pages/producto-marca/producto-marca.module').then( m => m.ProductoMarcaPageModule)
+  },  {
+    path: 'tabs',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
   }
+
+
 
 
 ];

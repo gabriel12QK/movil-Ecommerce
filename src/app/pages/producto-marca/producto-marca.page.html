@@ -8,8 +8,14 @@
     <ion-title>{{productos[0].descripcion}}</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-card *ngFor="let i of productos" style="margin: 10px;padding: 3px;" (click)="openProducto(i.id)">
+<ion-content >
+  <div *ngIf="valid==false" style="display: flex; justify-content: center; align-items: center; height: 100%; " >
+    <ion-label >{{productos}}</ion-label>
+  </div>
+  
+  <div *ngIf="valid==true">
+  <ion-searchbar placeholder="buscar"  (ionChange)="buscar($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+  <ion-card *ngFor="let i of productos | search: text" style="margin: 10px;padding: 3px;" (click)="openProducto(i.id)" >
     <ion-row>
 
       <ion-col size="7">
@@ -37,4 +43,14 @@
 
     </ion-row>
   </ion-card>
+  
+
+  </div>
 </ion-content>
+
+  
+ 
+   
+  
+  
+

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
-import { ProductoMarcaComponent } from 'src/app/components/producto-marca/producto-marca.component';
 import { VistaKitComponent } from 'src/app/components/vista-kit/vista-kit.component';
 import { VistaProductoComponent } from 'src/app/components/vista-producto/vista-producto.component';
 import { VistaPromocionProductoComponent } from 'src/app/components/vista-promocion-producto/vista-promocion-producto.component';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { environment } from 'src/environments/environment';
+import { ProductoMarcaPage } from '../producto-marca/producto-marca.page';
 import { EditarperfilPage } from './editarperfil/editarperfil.page';
 
 @Component({
@@ -165,18 +165,15 @@ url:any
      // }
    }
      async openProductoMarca(){
-    // if (this.selectedDiscipline > 0) {
        const modal = await this.modalCtrl.create({
          cssClass: '',
-         component: ProductoMarcaComponent,
+         component: ProductoMarcaPage,
          componentProps: {
-           marcaId:1
+           marcaId:2
          },
        });
        await modal.present();
        const { data } = await modal.onDidDismiss();
-     // } else {
-     //   this.serviceLoadingService.alert('Seleccione una disciplina');
-     // }
+
    }
 }

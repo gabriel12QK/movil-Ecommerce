@@ -1,25 +1,28 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import { VistaProductoComponent } from 'src/app/components/vista-producto/vista-producto.component';
 import { ModalController } from '@ionic/angular';
 import { ProductoService } from 'src/app/servicios/producto.service';
 import { environment } from 'src/environments/environment';
-import { VistaProductoComponent } from '../vista-producto/vista-producto.component';
+import { error } from 'console';
+
 
 @Component({
   selector: 'app-producto-marca',
-  templateUrl: './producto-marca.component.html',
-  styleUrls: ['./producto-marca.component.scss'],
+  templateUrl: './producto-marca.page.html',
+  styleUrls: ['./producto-marca.page.scss'],
 })
-export class ProductoMarcaComponent implements OnInit {
+export class ProductoMarcaPage implements OnInit {
   @Input() marcaId:any
   productos:any
   url:any
-
+  text:string = '';
+  valid=false
   constructor(
     private productoService:ProductoService,
     private modalCtrl:ModalController,
-  ) {
-      this.url=environment.urlProducto
-   }
+  ) { 
+    this.url=environment.urlProducto
+  }
 
   ngOnInit() {
     this.showProductoMarca()
@@ -29,16 +32,22 @@ export class ProductoMarcaComponent implements OnInit {
     this.productoService.showProductoMarca(this.marcaId).subscribe({
       next:(res)=>{
         this.productos=res
+        this.valid=true
         console.log(this.productos);
         //debugger
+      },
+      error:(e)=>{
+          this.productos=e.error.message
+          // console.log(this.productos);
+          // debugger
       }
     })
   }
   cancel(){
     this.modalCtrl.dismiss()
   }
+
   async openProducto(id:any){
-    // if (this.selectedDiscipline > 0) {
        const modal = await this.modalCtrl.create({
          cssClass: '',
          component: VistaProductoComponent,
@@ -48,9 +57,10 @@ export class ProductoMarcaComponent implements OnInit {
        });
        await modal.present();
        const { data } = await modal.onDidDismiss();
-     // } else {
-     //   this.serviceLoadingService.alert('Seleccione una disciplina');
-     // }
    }
+
+   buscar(event:any){
+    this.text= event.detail.value;
 }
 
+}

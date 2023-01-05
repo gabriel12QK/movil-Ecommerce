@@ -38,6 +38,7 @@ export class LoginPage implements OnInit {
         next:(res)=>{
           this.usuarioService.saveToken(res);
           this.toast(res.message)
+          this.router.navigate(['tabs'])
          // this.router.navigate(['home']);
         },
         error:(err)=> this.toast(err.error.message)
