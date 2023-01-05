@@ -3,13 +3,13 @@
     <ion-title>Ofertas Kits</ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar ></ion-searchbar>
+    <ion-searchbar placeholder="buscar"  (ionChange)="buscar($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content >
- <div *ngFor="let item of kit" (click)="showKit()">
-  <ion-card  >
+ <div *ngFor="let item of kit | ofertasKits: text">
+  <ion-card   >
     <img [src]="url+item.id+'/'+item.imagen" />
     <ion-card-content>
       <ion-card-title>{{item.descripcion}}</ion-card-title>
