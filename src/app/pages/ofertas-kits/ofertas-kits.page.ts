@@ -14,7 +14,8 @@ export class OfertasKitsPage implements OnInit {
   kit:any
   url:any
   contenidoKit:any
-
+  text:string = '';
+  
   constructor(
    private kitsService:KitsService,
    private modalCtrl:ModalController
@@ -33,5 +34,8 @@ export class OfertasKitsPage implements OnInit {
         }
     })
 
-}
+  }
+  buscar(event:any){
+    this.text= event.detail.value;
+  }
 }
