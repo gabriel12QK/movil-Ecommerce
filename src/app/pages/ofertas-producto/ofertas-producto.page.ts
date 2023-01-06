@@ -12,7 +12,9 @@ export class OfertasProductoPage implements OnInit {
   producto:any
   url:any
   contenidoProducto:any
-
+  text:string = '';
+  desc:any
+  precioPromo:any
   constructor(
    private ProductoService:ProductoService,
    private modalCtrl:ModalController
@@ -22,16 +24,21 @@ export class OfertasProductoPage implements OnInit {
     this.showProducto();
   }
   showProducto(){
-    this.ProductoService.promocionProducto(this.producto).subscribe({
+   this.ProductoService.promocionProducto(this.producto).subscribe({
       next:(res)=>{
         this.producto=res;
-        this.contenidoProducto=res.contenidoKit
+        this.contenidoProducto=res.contenidoProducto
         console.log(this.contenidoProducto);
-       // debugger
+        this.desc=(this.producto.descuento/100)
+        this.precioPromo=(this.producto.precio-(this.producto.precio*this.desc)).toFixed(2)
+      /*      console.log(this.precioPromo);
+           debugger */
         }
     })
 
+  }
+buscar(event:any){
+  this.text= event.detail.value;
 }
-
 
 }

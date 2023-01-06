@@ -65,7 +65,7 @@ const routes: Routes = [
 
     path: 'ofertas-producto',
     loadChildren: () => import('./pages/ofertas-producto/ofertas-producto.module').then( m => m.OfertasProductoPageModule)
-}
+},
  
 {
      path: 'carrito',

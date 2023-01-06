@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { OfertasProductoPageRoutingModule } from './ofertas-producto-routing.module';
 
 import { OfertasProductoPage } from './ofertas-producto.page';
-
 import { PipeModule } from 'src/app/pipes/pipe.module';
 
 @NgModule({

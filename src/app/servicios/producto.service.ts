@@ -27,9 +27,9 @@ export class ProductoService {
   }
 
   
-  promocionProducto()
-  {
-    return this.http.get<any>(`${environment.urlApi}indexPromocion/`)
+
+  promocionProducto(id:any){
+    return this.http.get<any>(`${environment.urlApi}indexPromocion`)
   }
 
 }
