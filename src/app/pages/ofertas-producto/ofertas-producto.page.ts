@@ -30,10 +30,10 @@ export class OfertasProductoPage implements OnInit {
    this.ProductoService.promocionProducto(this.producto).subscribe({
       next:(res)=>{
         this.producto=res;
-        this.contenidoProducto=res.contenidoProducto
+        /* this.contenidoProducto=res.contenidoProducto
         console.log(this.contenidoProducto);
         this.desc=(this.producto.descuento/100)
-        this.precioPromo=(this.producto.precio-(this.producto.precio*this.desc)).toFixed(2)
+        this.precioPromo=(this.producto.precio-(this.producto.precio*this.desc)).toFixed(2) */
         }
     })
 
