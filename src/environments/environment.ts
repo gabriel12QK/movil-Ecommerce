@@ -8,6 +8,8 @@ export const environment = {
   urlPersona:"http://127.0.0.1:8000/storage/images/persona/",
   urlProducto:"http://127.0.0.1:8000/storage/images/producto/",
   urlCategoria:"http://127.0.0.1:8000/api/categoria",
+  urlMarca:"http://127.0.0.1:8000/api/marca",
+  urlProductoMarca:"http://127.0.0.1:8000/api/showProductoMarca/",
  fileSelect: "../../../assets/default-user.png",
 };
 
