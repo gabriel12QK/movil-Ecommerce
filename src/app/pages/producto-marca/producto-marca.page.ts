@@ -65,4 +65,5 @@ export class ProductoMarcaPage implements OnInit {
     this.text= event.detail.value;
 }
 
+
 }

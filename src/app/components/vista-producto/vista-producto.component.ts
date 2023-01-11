@@ -13,6 +13,8 @@ export class VistaProductoComponent implements OnInit {
   @Input() productoId:any
   url:any
   producto:any
+  articulo:any
+  aux:any
   venta:number=0
   constructor( 
     private productoService:ProductoService,
@@ -29,7 +31,7 @@ export class VistaProductoComponent implements OnInit {
         this.productoService.showProducto(this.productoId).subscribe({
           next:(res)=>{
             this.producto=res[0];
-            console.log(this.producto);
+           // console.log(this.producto);
            // debugger
             }
         })
@@ -51,5 +53,38 @@ export class VistaProductoComponent implements OnInit {
     default:
       break;
   }
+ }
+
+ agregar(_producto:any,_venta:any){
+  let Total=_venta*_producto.precio
+  this.articulo=[{articulo:_producto, cantidad_compra:_venta, precio_compre:Total}]
+  if (JSON.parse(localStorage.getItem("Articulo")|| '{}')==null)
+  {
+    localStorage.setItem('Articulo',JSON.stringify(this.articulo))
+  }
+  else
+  {
+    var myJsonArrayObject=[]
+    var carrito=[]
+    carrito=JSON.parse(localStorage.getItem("Articulo")|| '{}')
+    if (carrito.length>=2) {
+      carrito.map((option:any)=>
+      myJsonArrayObject.push(option))
+    }
+    else
+    {
+      myJsonArrayObject.push(JSON.parse(localStorage.getItem("Articulo")|| '{}'))
+    }
+    myJsonArrayObject.push(this.articulo)
+    myJsonArrayObject=myJsonArrayObject.filter(e=>e!=null)
+    localStorage.removeItem("Articulo")
+    localStorage.setItem("Articulo",JSON.stringify(myJsonArrayObject))
+  }
+  //console.log('hola');
+  this.aux=JSON.parse(localStorage.getItem("Articulo")|| '{}')
+    console.log(this.aux);
+    this.venta=0
+  debugger
+
  }
 }
