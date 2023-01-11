@@ -3,29 +3,59 @@
     <ion-title>Ofertas Productos</ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar placeholder="buscar"  (ionChange)="buscar($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
+  <ion-content >
+    
+    
+    <ion-searchbar placeholder="buscar"  (ionChange)="buscar($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+    <ion-card *ngFor="let item of producto | search: text">
+      <ion-row>
+  
+        <ion-col size="8">
+  
+            <ion-row>
+              <ion-col size="12" style="text-align: center; font-size: 15px;font-style: unset;">
+                 <ion-card-title style="font-size:20px ;">{{item.nombre}}</ion-card-title> 
+              </ion-col>
+            
+              <ion-col size="12">
+                <ion-label >Peso: {{item.peso}} {{item.tipo_peso}}</ion-label>
+              </ion-col>
+              <ion-col size="12">
+                <ion-label>Marca: {{item.marca}}</ion-label>
+              </ion-col>
+              <ion-col size="12">
+                <ion-label>Descuento: {{item.descuento}}%</ion-label>
+              </ion-col>
+              <ion-col size="20" >
+                <ion-label >Pvp: <span ion-button color="light" class="buttonIngresar"> $: {{item.precioPromo}}</span>    <span style="text-decoration:line-through;" >  $: {{ item.precio}}</span></ion-label>
+              </ion-col>
+              <ion-col size="20">
+                <ion-label>Inicio:  {{item.fecha_inicio}}</ion-label>
+              </ion-col>
+              <ion-col size="20">
+                <ion-label>Fin: {{item.fecha_fin}}</ion-label>
+              </ion-col>
+            
+           
+              
 
- <ion-content >
-  <div *ngFor="let item of producto | search: text">
-   <ion-card   >
-    <img  [src]="url+item.id+'/'+item.imagen" />
-     <ion-card-content>
-       <ion-card-title style="font-size:20px ;">{{item.nombre}}</ion-card-title> 
-       <ion-item >Precios: {{item.precio}}</ion-item>
-       <ion-item >Peso: {{item.peso}}</ion-item>
-       <ion-item>Stock: {{item.stock}}</ion-item>
-       <ion-item>Descuento:{{item.descuento}}%</ion-item>
-       <ion-item>Descuento:{{item.precioPromo}}</ion-item>
-       <ion-label>Precio por promocion: ${{precioPromo}}</ion-label>
-       <ion-item>La Promo inicia el:  {{item.fecha_inicio}}</ion-item>
-       <ion-item >La Promo Finaliza el: {{item.fecha_fin}}</ion-item>
-     </ion-card-content>
-     <ion-col size="5">
-   
-     </ion-col>
-   </ion-card>
-  </div>
+            </ion-row>
+  
+        </ion-col>
+  
+        <ion-col size="4" style="display: flex; justify-content: center; align-items: center;">
+         <ion-img [src]="url+item.id+'/'+item.imagen" style="max-width:10rem; max-height: 7rem; padding: 0%; margin: 0; "></ion-img>
+        </ion-col>
+        
+  
+      </ion-row>
+    </ion-card>
+    
+  
+
+  </ion-content>
+
 
