@@ -50,18 +50,18 @@ export class ProductoMarcaPage implements OnInit {
   }
 
   async openProducto(id:any){
-       const modal = await this.modalCtrl.create({
-         cssClass: '',
-         component: VistaProductoComponent,
-         componentProps: {
-           productoId:id
-         },
-       });
-       await modal.present();
-       const { data } = await modal.onDidDismiss();
-   }
+      const modal = await this.modalCtrl.create({
+        cssClass: '',
+        component: VistaProductoComponent,
+        componentProps: {
+          productoId:id
+        },
+      });
+      await modal.present();
+      const { data } = await modal.onDidDismiss();
+  }
 
-   buscar(event:any){
+  buscar(event:any){
     this.text= event.detail.value;
 }
 

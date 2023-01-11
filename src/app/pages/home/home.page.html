@@ -61,29 +61,10 @@
 </ion-row>
 <ion-grid >
   <ion-row>
-    <ion-col size="2.4" >    
-      <ion-button size="small" class="marcas" style="  --background: #323232;">
+    <ion-col *ngFor="let items of marca" size="2.4" >    
+      <ion-button (click)="openProductoMarca(items.id)" size="small" class="marcas" style="  --background: #323232;">
         <img src="./assets/img/marcas/1.png"/>
-      </ion-button>
-    </ion-col>
-    <ion-col size="2.4">    
-      <ion-button size="small" class="marcas" style="  --background: #323232;">
-        <img src="./assets/img/marcas/2.png"/>
-      </ion-button>
-    </ion-col>
-    <ion-col size="2.4">    
-      <ion-button size="small" class="marcas" style="  --background: #323232;">
-        <img src="./assets/img/marcas/3.png"/>
-      </ion-button>
-    </ion-col>
-    <ion-col size="2.4">     
-      <ion-button size="small" class="marcas" style="  --background: #323232;">
-        <img src="./assets/img/marcas/4.png"/>
-      </ion-button>
-    </ion-col>
-    <ion-col size="2.4">     
-      <ion-button size="small" class="marcas" style="  --background: #323232;">
-        <img src="./assets/img/marcas/5.png"/>
+        <div class="card-title"></div>
       </ion-button>
     </ion-col>
   </ion-row>
