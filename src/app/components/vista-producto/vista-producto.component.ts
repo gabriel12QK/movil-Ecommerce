@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
+import { CarritoService } from 'src/app/servicios/carrito.service';
 import { CategoriasService } from 'src/app/servicios/categorias.service';
 import { ProductoService } from 'src/app/servicios/producto.service';
 import { environment } from 'src/environments/environment';
@@ -19,7 +20,8 @@ export class VistaProductoComponent implements OnInit {
   venta: number = 0
   constructor(
     private productoService: ProductoService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private carrito:CarritoService
   ) {
     this.url = environment.urlProducto
   }
@@ -58,34 +60,10 @@ export class VistaProductoComponent implements OnInit {
 
   agregar(_producto: any, _venta: any) {
     let Total = _venta * _producto.precio
-    this.articulo = [
-      { articulo_id:_producto.id ,imagen:_producto.imagen   ,articulo_nombre: _producto.nombre, precio_publico: _producto.precio, peso: _producto.peso, tipo_peso: _producto.tipo_peso, categoria: _producto.categoria, cantidad_compra: _venta, precio_compre: Total }
-    ]
-    if (JSON.parse(localStorage.getItem("Articulo")||'{}') == null) {
-      localStorage.setItem('Articulo', JSON.stringify(this.articulo))
-    }
-    else 
-    {
-      var myJsonArrayObject = []
-      var carrito = []
-      carrito = JSON.parse(localStorage.getItem("Articulo") || '{}')
-      if (carrito.length >= 2) {
-        carrito.map((option: any) =>
-          myJsonArrayObject.push(option))
-      }
-      else {
-        myJsonArrayObject.push(JSON.parse(localStorage.getItem("Articulo") || '{}'))
-      }
-      myJsonArrayObject.push(this.articulo)
-      myJsonArrayObject = myJsonArrayObject.filter(e => e != null)
-      localStorage.removeItem("Articulo")
-      localStorage.setItem("Articulo", JSON.stringify(myJsonArrayObject))
-    }
-    //console.log('hola');
-    this.aux = JSON.parse(localStorage.getItem("Articulo") || '{}')
-    console.log(this.aux);
-    this.venta = 0
-
+    this.articulo = 
+      { articulo_id:_producto.id ,imagen:_producto.imagen   ,articulo_nombre: _producto.nombre, precio_publico: _producto.precio, peso: _producto.peso, tipo_peso: _producto.tipo_peso, categoria: _producto.categoria, cantidad_compra: _venta, precio_compra: Total }
+    
+    this.carrito.agregarCarrito(this.articulo)
 
   }
 }
