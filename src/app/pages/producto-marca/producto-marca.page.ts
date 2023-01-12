@@ -35,8 +35,6 @@ export class ProductoMarcaPage implements OnInit {
       next:(res)=>{
         this.productos=res
         this.valid=true
-        console.log(this.productos);
-        //debugger
       },
       error:(e)=>{
           this.productos=e.error.message
@@ -47,6 +45,7 @@ export class ProductoMarcaPage implements OnInit {
   }
   cancel(){
     this.modalCtrl.dismiss()
+    this.router.navigate(['tabs/home'])
   }
 
   async openProducto(id:any){
