@@ -9,15 +9,46 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-searchbar placeholder="buscar"  (ionChange)="buscar($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
-  <ion-grid >
+  <div *ngIf="valid==false" style="display: flex; justify-content: center; align-items: center; height: 100%; " >
+  <ion-label >{{producto}}</ion-label>
+</div>
+
+<div *ngIf="valid==true">
+<ion-searchbar placeholder="buscar"  (ionChange)="buscar($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+  
+  
+  <ion-card *ngFor="let i of producto | search: text" style="margin: 10px;padding: 3px;" (click)="openProducto(i.id)" >
     <ion-row>
-      <ion-col>    
-        <ion-card  *ngFor="let item of producto | search: text">
-          <img  [src]="url+item.id+'/'+item.imagen" />
-          <div class="card-title">{{item.nombre}}</div>
-        </ion-card>
+
+      <ion-col size="7">
+
+          <ion-row>
+            <ion-col size="12" style="text-align: center; font-size: 15px;font-style: unset;">
+              <ion-card-title style="font-size:20px ;">{{i.nombre}}</ion-card-title> 
+            </ion-col>
+            <ion-col size="12">
+              <label>Categoria:{{i.categoria}}</label>
+            </ion-col>
+            <ion-col size="12">
+              <label>Tamaño:{{i.peso}} {{i.tipoPeso}}</label>
+            </ion-col>
+            <ion-col size="12">
+              <label>${{i.precio}}</label>
+            </ion-col>
+          </ion-row>
+
       </ion-col>
+
+      <ion-col size="5">
+      <ion-img [src]="url+i.id+'/'+i.imagen" style="max-width:7rem; max-height: 7rem;"></ion-img>
+      </ion-col>
+
     </ion-row>
-  </ion-grid>
+  </ion-card>
+  
+
+</div>
+
+  
+
 </ion-content>

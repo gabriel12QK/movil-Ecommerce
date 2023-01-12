@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
+import { VistaProductoComponent } from 'src/app/components/vista-producto/vista-producto.component';
 import { ProductoService } from 'src/app/servicios/producto.service';
 import { environment } from 'src/environments/environment';;
 
@@ -12,6 +13,7 @@ export class VistaProductoCategoriaPage implements OnInit {
   @Input() productoId:any
   url:any
   producto:any
+  valid=false
   text:string = '';
   constructor( 
     private productoService:ProductoService,
@@ -24,11 +26,29 @@ export class VistaProductoCategoriaPage implements OnInit {
     this.showProductoCategoria()
   }
 
+
+  async openProducto(id:any){
+    const modal = await this.modalCtrl.create({
+      cssClass: '',
+      component: VistaProductoComponent,
+      componentProps: {
+        productoId:id
+      },
+    });
+    await modal.present();
+    const { data } = await modal.onDidDismiss();
+}
   showProductoCategoria(){
         this.productoService.showProductoCategoria(this.productoId).subscribe({
           next:(res)=>{
+            this.valid=true
             this.producto=res;
             console.log(res);
+            },
+            error:(e)=>{
+                this.producto=e.error.message
+                // console.log(this.productos);
+                // debugger
             }
         })
   }
